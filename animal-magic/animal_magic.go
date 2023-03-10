@@ -1,42 +1,42 @@
 package chance
 
 import (
-  "time"
-  "math/rand"
+	"math/rand"
+	"time"
 )
 
 var animals = []string{
- "ant",
- "beaver",
- "cat",
- "dog",
- "elephant",
- "fox",
- "giraffe",
- "hedgehog",
+	"ant",
+	"beaver",
+	"cat",
+	"dog",
+	"elephant",
+	"fox",
+	"giraffe",
+	"hedgehog",
 }
 
 func SeedWithTime() {
-  rand.Seed(time.Now().UnixNano())
+	rand.Seed(time.Now().UnixNano())
 }
 
 func RollADie() int {
-  return rand.Intn(20) + 1
+	return rand.Intn(20) + 1
 }
 
 func GenerateWandEnergy() float64 {
-  return rand.Float64() * 12.0
+	return rand.Float64() * 12.0
 }
 
 func ShuffleAnimals() []string {
-  SeedWithTime()
+	SeedWithTime()
 
-  shuffled := make([]string, len(animals))
-  copy(shuffled, animals)
+	shuffled := make([]string, len(animals))
+	copy(shuffled, animals)
 
-  rand.Shuffle(len(shuffled), func(i, j int) {
-    shuffled[i], shuffled[j] = shuffled[j], shuffled[i]
-  })
+	rand.Shuffle(len(shuffled), func(i, j int) {
+		shuffled[i], shuffled[j] = shuffled[j], shuffled[i]
+	})
 
-  return shuffled
+	return shuffled
 }
