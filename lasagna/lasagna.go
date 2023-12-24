@@ -11,7 +11,7 @@ func RemainingOvenTime(actualMinutesInOven int) int {
 	return OvenTime - actualMinutesInOven
 }
 
-func PreparationTime(numberOfLayers int) int {
+func PrepTime(numberOfLayers int) int {
 	if numberOfLayers < 1 {
 		panic("numberOfLayers cannot be less than 1")
 	}
@@ -20,5 +20,5 @@ func PreparationTime(numberOfLayers int) int {
 }
 
 func ElapsedTime(numberOfLayers int, actualMinutesInOven int) int {
-	return PreparationTime(numberOfLayers) + actualMinutesInOven
+	return PrepTime(numberOfLayers) + actualMinutesInOven
 }
